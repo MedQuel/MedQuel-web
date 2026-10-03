@@ -53,24 +53,40 @@ const FAQ = () => {
   }
 
   return (
-    <section id="faq" className="section-padding bg-dark-light/50">
-      <div className="container-custom">
+    <section id="faq" className="relative overflow-hidden bg-[#0A0A0A] py-24 text-white">
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600&display=swap');
+        .f-display { font-family: 'Archivo Black', sans-serif; }
+        .f-body { font-family: 'Inter', sans-serif; }
+      `}</style>
+
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.05]"
+        style={{
+          backgroundImage:
+            'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)',
+          backgroundSize: '48px 48px',
+        }}
+      />
+
+      <div className="relative z-10 mx-auto max-w-6xl px-8 lg:px-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Frequently Asked <span className="gradient-text">Questions</span>
+          <h2 className="f-display text-3xl leading-tight sm:text-4xl lg:text-5xl">
+            FREQUENTLY ASKED <span className="text-[#C6F135]">QUESTIONS</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="f-body mx-auto mt-4 max-w-2xl text-lg text-white/50">
             Everything you need to know about Med Quel
           </p>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto space-y-4">
+        <div className="mx-auto max-w-4xl space-y-4">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
@@ -78,20 +94,20 @@ const FAQ = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="card cursor-pointer"
+              className="cursor-pointer rounded-xl border border-white/10 bg-[#111] p-6 transition-colors hover:border-white/25"
               onClick={() => toggleFAQ(index)}
             >
               <div className="flex items-start justify-between gap-4">
-                <h3 className="text-lg font-semibold flex-1">{faq.question}</h3>
-                <button className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary/30 transition-colors">
+                <h3 className="f-body flex-1 text-base font-semibold text-white">{faq.question}</h3>
+                <button className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-[#C6F135]/15 transition-colors hover:bg-[#C6F135]/25">
                   {openIndex === index ? (
-                    <Minus className="w-5 h-5 text-primary" />
+                    <Minus className="h-5 w-5 text-[#C6F135]" />
                   ) : (
-                    <Plus className="w-5 h-5 text-primary" />
+                    <Plus className="h-5 w-5 text-[#C6F135]" />
                   )}
                 </button>
               </div>
-              
+
               <motion.div
                 initial={false}
                 animate={{
@@ -101,7 +117,7 @@ const FAQ = () => {
                 transition={{ duration: 0.3 }}
                 className="overflow-hidden"
               >
-                <p className="text-gray-400 mt-4 leading-relaxed">{faq.answer}</p>
+                <p className="f-body mt-4 text-sm leading-relaxed text-white/50">{faq.answer}</p>
               </motion.div>
             </motion.div>
           ))}
@@ -112,10 +128,15 @@ const FAQ = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mt-12"
+          className="mt-12 text-center"
         >
-          <p className="text-gray-400 mb-4">Still have questions?</p>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=support@medquel.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-light font-semibold">
+          <p className="f-body mb-4 text-white/50">Still have questions?</p>
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=support@medquel.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="f-body font-semibold text-[#C6F135] transition-colors hover:text-[#d5fb5a]"
+          >
             Contact our support team →
           </a>
         </motion.div>

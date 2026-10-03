@@ -1,78 +1,92 @@
-import { motion } from 'framer-motion'
-import { Mail, Facebook, Instagram, Twitter, Linkedin, Youtube, Send } from 'lucide-react'
-import { useState } from 'react'
+import { motion } from "framer-motion";
+import {
+  Mail,
+  Facebook,
+  Instagram,
+  Twitter,
+  Linkedin,
+  Youtube,
+  Send,
+} from "lucide-react";
+import { useState } from "react";
 
 const Footer = () => {
-  const [email, setEmail] = useState('')
+  const [email, setEmail] = useState("");
 
   const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle newsletter subscription
-    alert('Thank you for subscribing!')
-    setEmail('')
-  }
+    e.preventDefault();
+    alert("Thank you for subscribing!");
+    setEmail("");
+  };
 
   return (
-    <footer className="bg-dark-light border-t border-dark-lighter">
+    <footer className="border-t border-white/10 bg-[#0A0A0A] text-white">
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600&display=swap');
+        .f-display { font-family: 'Archivo Black', sans-serif; }
+        .f-body { font-family: 'Inter', sans-serif; }
+      `}</style>
+
       {/* Main Footer */}
-      <div className="section-padding">
-        <div className="container-custom">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+      <div className="py-20">
+        <div className="mx-auto max-w-6xl px-8 lg:px-16">
+          <div className="mb-12 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
             {/* Company Info */}
             <div>
-              <h3 className="text-2xl font-bold gradient-text mb-4">Med Quel</h3>
-              <p className="text-gray-400 mb-4">
-                Revolutionizing Medical Education Through Gamified Learning
+              <h3 className="f-display mb-4 text-xl">
+                MED<span className="text-[#C6F135]">QUEL</span>
+              </h3>
+              <p className="f-body mb-4 text-sm text-white/50">
+                Revolutionizing medical education through gamified learning
               </p>
-              <p className="text-sm text-gray-500">
+              <p className="f-body text-xs text-white/30">
                 Empowering medical aspirants since 2025
               </p>
             </div>
 
             {/* Quick Links */}
             <div>
-              <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+              <h4 className="f-body mb-4 text-sm font-semibold text-white">
+                Quick Links
+              </h4>
               <ul className="space-y-2">
-                <li>
-                  <a href="#home" className="text-gray-400 hover:text-primary transition-colors">
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a href="#features" className="text-gray-400 hover:text-primary transition-colors">
-                    Features
-                  </a>
-                </li>
-                <li>
-                  <a href="#how-it-works" className="text-gray-400 hover:text-primary transition-colors">
-                    How It Works
-                  </a>
-                </li>
-                <li>
-                  <a href="#pricing" className="text-gray-400 hover:text-primary transition-colors">
-                    Pricing
-                  </a>
-                </li>
-                <li>
-                  <a href="#faq" className="text-gray-400 hover:text-primary transition-colors">
-                    FAQ
-                  </a>
-                </li>
-                <li>
-                  <a href="#screenshots" className="text-gray-400 hover:text-primary transition-colors">
-                    Screenshots
-                  </a>
-                </li>
+                {[
+                  { label: "Home", href: "#home" },
+                  { label: "Features", href: "#features" },
+                  { label: "How It Works", href: "#how-it-works" },
+                  { label: "Pricing", href: "#pricing" },
+                  { label: "FAQ", href: "#faq" },
+                  { label: "Screenshots", href: "#screenshots" },
+                ].map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="f-body text-sm text-white/50 transition-colors hover:text-[#C6F135]"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
 
             {/* Legal */}
             <div>
-              <h4 className="text-lg font-semibold mb-4">Legal</h4>
+              <h4 className="f-body mb-4 text-sm font-semibold text-white">
+                Legal
+              </h4>
               <ul className="space-y-2">
-                {['Privacy Policy', 'Terms of Service', 'Cookie Policy', 'Refund Policy'].map((link) => (
+                {[
+                  "Privacy Policy",
+                  "Terms of Service",
+                  "Cookie Policy",
+                  "Refund Policy",
+                ].map((link) => (
                   <li key={link}>
-                    <a href={`#${link.toLowerCase().replace(/\s+/g, '-')}`} className="text-gray-400 hover:text-primary transition-colors">
+                    <a
+                      href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}
+                      className="f-body text-sm text-white/50 transition-colors hover:text-[#C6F135]"
+                    >
                       {link}
                     </a>
                   </li>
@@ -82,21 +96,34 @@ const Footer = () => {
 
             {/* Support */}
             <div>
-              <h4 className="text-lg font-semibold mb-4">Support</h4>
+              <h4 className="f-body mb-4 text-sm font-semibold text-white">
+                Support
+              </h4>
               <ul className="space-y-2">
                 <li>
-                  <a href="#help" className="text-gray-400 hover:text-primary transition-colors">
+                  <a
+                    href="#help"
+                    className="f-body text-sm text-white/50 transition-colors hover:text-[#C6F135]"
+                  >
                     Help Center
                   </a>
                 </li>
                 <li>
-                  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=support@medquel.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors flex items-center gap-2">
-                    <Mail className="w-4 h-4" />
+                  <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=support@medquel.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="f-body flex items-center gap-2 text-sm text-white/50 transition-colors hover:text-[#C6F135]"
+                  >
+                    <Mail className="h-4 w-4" />
                     support@medquel.com
                   </a>
                 </li>
                 <li>
-                  <a href="#faq" className="text-gray-400 hover:text-primary transition-colors">
+                  <a
+                    href="#faq"
+                    className="f-body text-sm text-white/50 transition-colors hover:text-[#C6F135]"
+                  >
                     FAQ
                   </a>
                 </li>
@@ -110,65 +137,76 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="card max-w-2xl mx-auto mb-12"
+            className="mx-auto mb-12 max-w-2xl rounded-xl border border-white/10 bg-[#111] p-6"
           >
-            <div className="text-center mb-4">
-              <h4 className="text-xl font-bold mb-2">Stay Updated</h4>
-              <p className="text-gray-400">Get study tips, contest alerts, and updates directly to your inbox</p>
+            <div className="mb-4 text-center">
+              <h4 className="f-body text-lg font-semibold text-white">
+                Stay Updated
+              </h4>
+              <p className="f-body mt-1 text-sm text-white/50">
+                Get study tips, contest alerts, and updates directly to your
+                inbox
+              </p>
             </div>
-            <form onSubmit={handleSubscribe} className="flex gap-3">
+            <form
+              onSubmit={handleSubscribe}
+              className="flex flex-col gap-3 sm:flex-row"
+            >
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-dark-lighter border border-dark-lighter rounded-lg focus:outline-none focus:border-primary text-white"
+                className="f-body min-w-0 flex-1 rounded-lg border border-white/15 bg-[#1a1a1a] px-4 py-3 text-white placeholder:text-white/30 focus:border-[#C6F135] focus:outline-none"
                 required
               />
-              <button type="submit" className="btn-primary flex items-center gap-2 px-6">
-                <Send className="w-4 h-4" />
+              <button
+                type="submit"
+                className="f-body flex shrink-0 items-center justify-center gap-2 rounded-lg bg-[#C6F135] px-6 py-3 font-medium text-black transition-colors hover:bg-[#d5fb5a]"
+              >
+                <Send className="h-4 w-4" />
                 Subscribe
               </button>
             </form>
           </motion.div>
 
           {/* Social Media & Download */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-8 border-t border-dark-lighter">
-            {/* Social Links */}
+          <div className="flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 md:flex-row">
             <div className="flex items-center gap-4">
-              <span className="text-gray-400 mr-2">Follow Us:</span>
+              <span className="f-body mr-2 text-sm text-white/40">
+                Follow Us:
+              </span>
               {[
-                { icon: Instagram, link: 'https://instagram.com/medquel' },
-                { icon: Facebook, link: 'https://facebook.com/medquel' },
-                { icon: Twitter, link: 'https://twitter.com/medquel' },
-                { icon: Linkedin, link: 'https://linkedin.com/medquel' },
-                { icon: Youtube, link: 'https://youtube.com/medquel' }
+                { icon: Instagram, link: "https://instagram.com/medquel" },
+                { icon: Facebook, link: "https://facebook.com/medquel" },
+                { icon: Twitter, link: "https://twitter.com/medquel" },
+                { icon: Linkedin, link: "https://linkedin.com/medquel" },
+                { icon: Youtube, link: "https://youtube.com/medquel" },
               ].map((social, index) => (
                 <a
                   key={index}
                   href={social.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-dark-lighter hover:bg-primary flex items-center justify-center transition-colors group"
+                  className="group flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-[#111] transition-colors hover:border-[#C6F135]/60"
                 >
-                  <social.icon className="w-5 h-5 text-gray-400 group-hover:text-white" />
+                  <social.icon className="h-4 w-4 text-white/50 transition-colors group-hover:text-[#C6F135]" />
                 </a>
               ))}
             </div>
 
-            {/* Download Button */}
-            <a 
-              href="https://play.google.com" 
-              target="_blank" 
+            <a
+              href="https://play.google.com"
+              target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-lg transition-all"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-black px-6 py-3 text-white transition-colors hover:border-[#C6F135]/60"
             >
-              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.637.637 0 0 0-.83.22l-1.88 3.24a11.43 11.43 0 0 0-8.94 0L5.65 5.67a.643.643 0 0 0-.87-.2c-.28.18-.37.54-.22.83L6.4 9.48A10.81 10.81 0 0 0 1 18h22a10.81 10.81 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0zm7.5 0a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0z"/>
+              <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.637.637 0 0 0-.83.22l-1.88 3.24a11.43 11.43 0 0 0-8.94 0L5.65 5.67a.643.643 0 0 0-.87-.2c-.28.18-.37.54-.22.83L6.4 9.48A10.81 10.81 0 0 0 1 18h22a10.81 10.81 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0zm7.5 0a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0z" />
               </svg>
               <div className="text-left">
-                <div className="text-xs">Download on</div>
-                <div className="text-sm font-semibold">Google Play</div>
+                <div className="f-body text-xs text-white/50">Download on</div>
+                <div className="f-body text-sm font-semibold">Google Play</div>
               </div>
             </a>
           </div>
@@ -176,16 +214,18 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-dark-lighter">
-        <div className="container-custom py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
-            <p>&copy; 2026 Med Quel. All rights reserved.</p>
-            <p>Made with ❤️ for medical aspirants worldwide</p>
+      <div className="border-t border-white/10">
+        <div className="mx-auto max-w-6xl px-8 py-6 lg:px-16">
+          <div className="flex flex-col items-center justify-between gap-4 text-sm text-white/30 md:flex-row">
+            <p className="f-body">&copy; 2026 Med Quel. All rights reserved.</p>
+            <p className="f-body">
+              Made with ❤️ for medical aspirants worldwide
+            </p>
           </div>
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
