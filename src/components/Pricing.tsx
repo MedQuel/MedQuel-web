@@ -1,109 +1,215 @@
-import { motion } from 'framer-motion'
-import { Check, Zap, Crown } from 'lucide-react'
+import { motion } from "framer-motion";
+import { Check, Zap, Crown, Calendar } from "lucide-react";
 
 const Pricing = () => {
   return (
-    <section id="pricing" className="section-padding">
-      <div className="container-custom">
+    <section
+      id="pricing"
+      className="relative overflow-hidden bg-[#0A0A0A] py-24 text-white"
+    >
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600&display=swap');
+        .f-display { font-family: 'Archivo Black', sans-serif; }
+        .f-body { font-family: 'Inter', sans-serif; }
+      `}</style>
+
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+        }}
+      />
+
+      <div className="relative z-10 mx-auto max-w-6xl px-8 lg:px-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Start your{' '}
-            <span className="gradient-text">gamified medical quiz journey</span>{' '}
-            today
+          <h2 className="f-display text-3xl leading-tight sm:text-4xl lg:text-5xl">
+            START YOUR GAMIFIED
+            <br />
+            <span className="text-[#C6F135]">MEDICAL QUIZ JOURNEY</span> TODAY
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="f-body mx-auto mt-4 max-w-2xl text-lg text-white/50">
             Download for free and start competing in minutes!
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
+        <div className="mb-16 mx-auto grid max-w-6xl gap-6 md:grid-cols-3">
           {/* Free Plan */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="card"
+            className="rounded-xl border border-white/10 bg-[#111] p-6"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
-                <Zap className="w-6 h-6 text-primary" />
+            <div className="mb-6 flex items-center gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#8B7FE8]/15">
+                <Zap className="h-6 w-6 text-[#8B7FE8]" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold">Free Plan</h3>
-                <p className="text-gray-400">Get started today</p>
+                <h3 className="f-body text-xl font-semibold text-white">
+                  Free Plan
+                </h3>
+                <p className="f-body text-sm text-white/50">
+                  Get started today
+                </p>
               </div>
             </div>
 
-            <ul className="space-y-3 mb-6">
+            <div className="mb-6">
+              <span className="f-display text-3xl">$0</span>
+              <span className="f-body text-sm text-white/50"> /forever</span>
+            </div>
+
+            <ul className="mb-6 space-y-3">
               {[
-                'Access to basic quizzes',
-                'Community chat & discussions',
-                'Weekly contests',
-                'Basic analytics dashboard',
-                'Profile & achievements',
-                'Leaderboard access'
+                "Access to basic quizzes",
+                "Community chat & discussions",
+                "Weekly contests",
+                "Basic analytics dashboard",
+                "Profile & achievements",
+                "Leaderboard access",
               ].map((feature, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-300">{feature}</span>
+                  <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#8B7FE8]" />
+                  <span className="f-body text-sm text-white/60">
+                    {feature}
+                  </span>
                 </li>
               ))}
             </ul>
 
-            <a href="https://play.google.com" target="_blank" rel="noopener noreferrer" className="btn-secondary w-full justify-center">
+            <a
+              href="https://play.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="f-body block w-full rounded-md border border-white/20 py-3 text-center text-sm font-medium transition-colors hover:border-white/40"
+            >
               Download Free
+            </a>
+          </motion.div>
+
+          {/* Monthly Plan */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="rounded-xl border border-white/10 bg-[#111] p-6"
+          >
+            <div className="mb-6 flex items-center gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#4ADE80]/15">
+                <Calendar className="h-6 w-6 text-[#4ADE80]" />
+              </div>
+              <div>
+                <h3 className="f-body text-xl font-semibold text-white">
+                  Monthly
+                </h3>
+                <p className="f-body text-sm text-white/50">
+                  Flexible, cancel anytime
+                </p>
+              </div>
+            </div>
+
+            <div className="mb-6">
+              <span className="f-display text-3xl">$4.99</span>
+              <span className="f-body text-sm text-white/50"> /month</span>
+            </div>
+
+            <ul className="mb-6 space-y-3">
+              {[
+                "Everything in Free plan",
+                "Unlimited quiz attempts",
+                "Advanced performance analytics",
+                "Exclusive monthly contests",
+                "Ad-free experience",
+                "Cancel anytime",
+              ].map((feature, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#4ADE80]" />
+                  <span className="f-body text-sm text-white/60">
+                    {feature}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href="https://play.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="f-body block w-full rounded-md border border-white/20 py-3 text-center text-sm font-medium transition-colors hover:border-white/40"
+            >
+              Start Monthly Plan
             </a>
           </motion.div>
 
           {/* Premium Plan */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="card border-2 border-accent relative overflow-hidden"
+            className="relative overflow-hidden rounded-xl border-2 border-[#C6F135] bg-[#111] p-6"
           >
-            <div className="absolute top-0 right-0 bg-accent text-dark px-4 py-1 text-sm font-bold">
+            <div className="f-body absolute right-0 top-0 bg-[#C6F135] px-4 py-1 text-xs font-bold text-black">
               POPULAR
             </div>
 
-            <div className="flex items-center gap-3 mb-6 mt-4">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center">
-                <Crown className="w-6 h-6 text-dark" />
+            <div className="mb-6 mt-4 flex items-center gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#C6F135]/15">
+                <Crown className="h-6 w-6 text-[#C6F135]" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold">Premium</h3>
-                <p className="text-gray-400">Unlock full potential</p>
+                <h3 className="f-body text-xl font-semibold text-white">
+                  Premium
+                </h3>
+                <p className="f-body text-sm text-white/50">
+                  Unlock full potential
+                </p>
               </div>
             </div>
 
-            <ul className="space-y-3 mb-6">
+            <div className="mb-6">
+              <span className="f-display text-3xl">$39.99</span>
+              <span className="f-body text-sm text-white/50"> /year</span>
+            </div>
+
+            <ul className="mb-6 space-y-3">
               {[
-                'Everything in Free plan',
-                'Unlimited quiz attempts',
-                'Advanced performance analytics',
-                'Exclusive premium contests',
-                'Priority support',
-                'Ad-free experience',
-                'Early access to new quizzes',
-                'Personalized challenge recommendations'
+                "Everything in Free plan",
+                "Unlimited quiz attempts",
+                "Advanced performance analytics",
+                "Exclusive premium contests",
+                "Priority support",
+                "Ad-free experience",
+                "Early access to new quizzes",
+                "Personalized challenge recommendations",
               ].map((feature, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-300">{feature}</span>
+                  <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#C6F135]" />
+                  <span className="f-body text-sm text-white/60">
+                    {feature}
+                  </span>
                 </li>
               ))}
             </ul>
 
-            <a href="https://play.google.com" target="_blank" rel="noopener noreferrer" className="btn-primary w-full justify-center">
-              Get Premium
+            <a
+              href="https://play.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="f-display block w-full rounded-md bg-[#C6F135] py-3 text-center text-sm tracking-wide text-black transition-colors hover:bg-[#d5fb5a]"
+            >
+              GET PREMIUM
             </a>
           </motion.div>
         </div>
@@ -116,55 +222,65 @@ const Pricing = () => {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <div className="card max-w-3xl mx-auto">
-            <h3 className="text-3xl font-bold mb-4">Ready to Challenge Yourself?</h3>
-            <p className="text-gray-300 mb-8">Download Med Quel now and join 50,000+ medical quiz enthusiasts!</p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a 
-                href="https://play.google.com" 
-                target="_blank" 
+          <div className="mx-auto max-w-3xl rounded-xl border border-white/10 bg-[#111] p-8">
+            <h3 className="f-display text-2xl sm:text-3xl">
+              READY TO CHALLENGE YOURSELF?
+            </h3>
+            <p className="f-body mt-4 text-white/50">
+              Download Med Quel now and join 50,000+ medical quiz enthusiasts!
+            </p>
+
+            <div className="mt-8 flex flex-col items-center justify-center gap-6 sm:flex-row">
+              <a
+                href="https://play.google.com"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-black hover:bg-gray-900 text-white px-8 py-4 rounded-lg transition-all"
+                className="inline-flex items-center gap-3 rounded-lg border border-white/20 bg-black px-8 py-4 text-white transition-colors hover:border-[#C6F135]/60"
               >
-                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.637.637 0 0 0-.83.22l-1.88 3.24a11.43 11.43 0 0 0-8.94 0L5.65 5.67a.643.643 0 0 0-.87-.2c-.28.18-.37.54-.22.83L6.4 9.48A10.81 10.81 0 0 0 1 18h22a10.81 10.81 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0zm7.5 0a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0z"/>
+                <svg
+                  className="h-8 w-8"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.637.637 0 0 0-.83.22l-1.88 3.24a11.43 11.43 0 0 0-8.94 0L5.65 5.67a.643.643 0 0 0-.87-.2c-.28.18-.37.54-.22.83L6.4 9.48A10.81 10.81 0 0 0 1 18h22a10.81 10.81 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0zm7.5 0a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0z" />
                 </svg>
                 <div className="text-left">
-                  <div className="text-xs">GET IT ON</div>
-                  <div className="text-lg font-semibold">Google Play</div>
+                  <div className="f-body text-xs text-white/50">GET IT ON</div>
+                  <div className="f-body text-lg font-semibold">
+                    Google Play
+                  </div>
                 </div>
               </a>
 
               <div className="flex flex-col items-center gap-2">
-                <div className="w-32 h-32 bg-white rounded-lg p-2">
-                  <div className="w-full h-full bg-gray-200 rounded flex items-center justify-center text-gray-400 text-xs">
+                <div className="h-32 w-32 rounded-lg bg-white p-2">
+                  <div className="flex h-full w-full items-center justify-center rounded bg-gray-200 text-xs text-gray-400">
                     QR Code
                   </div>
                 </div>
-                <p className="text-sm text-gray-400">Scan to download</p>
+                <p className="f-body text-sm text-white/50">Scan to download</p>
               </div>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-4 justify-center text-sm text-gray-400">
+            <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm text-white/50">
               <div className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-success" />
-                <span>Free to download</span>
+                <Check className="h-4 w-4 text-[#C6F135]" />
+                <span className="f-body">Free to download</span>
               </div>
               <div className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-success" />
-                <span>No credit card required</span>
+                <Check className="h-4 w-4 text-[#C6F135]" />
+                <span className="f-body">No credit card required</span>
               </div>
               <div className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-success" />
-                <span>Start quizzing in 2 minutes</span>
+                <Check className="h-4 w-4 text-[#C6F135]" />
+                <span className="f-body">Start quizzing in 2 minutes</span>
               </div>
             </div>
           </div>
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Pricing
+export default Pricing;
