@@ -1,60 +1,47 @@
 /** @type {import('tailwindcss').Config} */
+
+
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+
   theme: {
     extend: {
       colors: {
-        primary: {
-          DEFAULT: '#2563EB',
-          dark: '#1E40AF',
-          light: '#3B82F6'
-        },
-        success: {
-          DEFAULT: '#10B981',
-          dark: '#059669'
-        },
-        accent: {
-          DEFAULT: '#F59E0B',
-          dark: '#D97706'
-        },
-        dark: {
-          DEFAULT: '#0A0E27',
-          light: '#141B3D',
-          lighter: '#1E2A4A'
-        }
+        primary: { DEFAULT: '#2563EB', dark: '#1E40AF', light: '#3B82F6' },
+        success: { DEFAULT: '#10B981', dark: '#059669' },
+        accent: { DEFAULT: '#F59E0B', dark: '#D97706' },
+        dark: { DEFAULT: '#0A0E27', light: '#141B3D', lighter: '#1E2A4A' },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        heading: ['Poppins', 'Inter', 'system-ui', 'sans-serif']
+        heading: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-in-out',
         'slide-up': 'slideUp 0.6s ease-out',
         'slide-in': 'slideIn 0.6s ease-out',
-        'float': 'float 3s ease-in-out infinite',
+        float: 'float 3s ease-in-out infinite',
       },
+
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
-          '100%': { opacity: '1' }
+          '100%': { opacity: '1' },
         },
         slideUp: {
           '0%': { transform: 'translateY(30px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' }
+          '100%': { transform: 'translateY(0)', opacity: '1' },
         },
         slideIn: {
           '0%': { transform: 'translateX(-30px)', opacity: '0' },
-          '100%': { transform: 'translateX(0)', opacity: '1' }
+          '100%': { transform: 'translateX(0)', opacity: '1' },
         },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' }
-        }
-      }
+          '50%': { transform: 'translateY(-20px)' },
+        },
+      },
     },
   },
   plugins: [],
-}
+};
