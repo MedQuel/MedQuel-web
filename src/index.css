@@ -4,11 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
   body {
     @apply bg-dark text-gray-100 font-sans antialiased;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
   }
@@ -22,19 +23,19 @@ html, body {
   .btn-primary {
     @apply bg-primary hover:bg-primary-dark text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg;
   }
-  
+
   .btn-secondary {
     @apply border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300;
   }
-  
+
   .card {
     @apply bg-dark-light border border-dark-lighter rounded-xl p-6 hover:border-primary transition-all duration-300;
   }
-  
+
   .section-padding {
     @apply py-20 px-4 sm:px-6 lg:px-8;
   }
-  
+
   .container-custom {
     @apply max-w-7xl mx-auto;
   }
@@ -44,32 +45,27 @@ html, body {
 ::-webkit-scrollbar {
   width: 10px;
 }
-
 ::-webkit-scrollbar-track {
-  background: #0A0E27;
+  background: #0a0e27;
 }
-
 ::-webkit-scrollbar-thumb {
-  background: #2563EB;
+  background: #2563eb;
   border-radius: 5px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #1E40AF;
+  background: #1e40af;
 }
-
-/* Smooth Scroll */
 html {
   scroll-behavior: smooth;
 }
 
 /* Gradient Background */
 .gradient-bg {
-  background: linear-gradient(135deg, #0A0E27 0%, #141B3D 50%, #1E2A4A 100%);
+  background: linear-gradient(135deg, #0a0e27 0%, #141b3d 50%, #1e2a4a 100%);
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
