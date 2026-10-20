@@ -1,48 +1,57 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# dependencies
+docs/
+gen/
 
-# Dependencies
-node_modules
+test.db
+creds.json
 
-# Build outputs
-dist
-dist-ssr
-build
-.next
-out
+node_modules/
+tmp/*
 
-# Environment variables
+# Expo
+.expo/
+dist/
+web-build/
+**/.wrangler
+# Native
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+requests/
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# local env files
 .env
 .env*.local
-*.local
+config/serviceAccountKey.json
 
-# Vercel
-.vercel
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# OS files
-Thumbs.db
-.DS_Store
-
-# TypeScript
+# typescript
 *.tsbuildinfo
+op.json
+yarn.lock
+modules/test.json
+modules/test.txt
 
-# Testing
-coverage
-.nyc_output
+.playwright-mcp/
+*.log
+.firebase/**
+
+# dev tools
+get-token-script/
+nginx-dev.conf
+tmp/
+.vercel
