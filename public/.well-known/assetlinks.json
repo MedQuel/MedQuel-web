@@ -1,0 +1,11 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.medquel.app",
+      "sha256_cert_fingerprints": ["D3:D3:34:A3:55:76:AD:36:DD:A9:85:F4:C3:87:6E:BA:27:A3:63:1B:AF:6F:B9:A5:8A:36:61:85:65:A8:72:63"]
+    }
+  }
+]
