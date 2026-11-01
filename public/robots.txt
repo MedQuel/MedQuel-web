@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /payment/
 
 # Sitemap
 Sitemap: https://www.medquel.com/sitemap.xml
