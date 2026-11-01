@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap');
+
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 @layer base {
   body {
@@ -20,6 +21,14 @@ html, body {
 }
 
 @layer components {
+  .f-display {
+    font-family: 'Archivo Black', sans-serif;
+  }
+
+  .f-body {
+    font-family: 'Inter', sans-serif;
+  }
+
   .btn-primary {
     @apply bg-primary hover:bg-primary-dark text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg;
   }
@@ -46,17 +55,18 @@ html, body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0e27;
+  background: #0a0a0a;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2563eb;
   border-radius: 5px;
+  background: #c6f135;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #1e40af;
+  background: #d5fb5a;
 }
 html {
   scroll-behavior: smooth;
+  scrollbar-color: #c6f135 #0a0a0a;
 }
 
 /* Gradient Background */
@@ -69,4 +79,8 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+section[id] {
+  scroll-margin-top: 5rem;
 }
