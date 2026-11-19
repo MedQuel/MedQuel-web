@@ -81,6 +81,30 @@ const testimonials = [
     rating: 5,
     image: '👨‍🎓',
     quote: 'MedQuel is a game-changer for medical students! The gamified quizzes and rewards system make learning enjoyable. I look forward to my daily quiz battles!',
+  },
+   {
+    name: 'Mohsin Ansari',
+    location: 'Uttar Pradesh',
+    exam: 'Medical Student',
+    rating: 5,
+    image: '👨‍🎓',
+    quote: 'This app makes learning so much more enjoyable! The interactive quizzes and exciting challenges keep me motivated to study every day. Love the experience!',
+  },
+  {
+    name: 'Jatinveer Chauhan',
+    location: 'Rajasthan',
+    exam: 'Medical Student',
+    rating: 5,
+    image: '👨‍🎓',
+    quote: 'Absolutely love this app! Competing with friends, earning rewards, and tracking my progress make studying feel less like work and more like fun.',
+  },
+  {
+    name: 'Satyam',
+    location: 'Hydrabad',
+    exam: 'Medical Student',
+    rating: 5,
+    image: '👨‍🎓',
+    quote: 'A fantastic learning experience! The quizzes are engaging, the rewards system is amazing, and the leaderboard motivates me to improve my performance',
   }
 ];
 
@@ -196,47 +220,49 @@ const Statistics = () => {
           <div className='pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-black to-transparent' />
           <div className='pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-black to-transparent' />
 
-          <motion.div
-            className='flex gap-6'
-            animate={{ x: ['-50%', '0%'] }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-          >
-            {[...testimonials, ...testimonials].map((testimonial, index) => (
-              <div
-                key={index}
-                className='w-[320px] flex-shrink-0 rounded-xl border border-white/10 bg-[#111] p-6 transition-colors hover:border-white/25'
-              >
-                <div className='mb-4 flex items-center gap-4'>
-                  <div className='text-5xl'>{testimonial.image}</div>
-                  <div className='flex-1'>
-                    <h4 className='f-body text-base font-semibold text-white'>
-                      {testimonial.name}
-                    </h4>
-                    <p className='f-body text-xs text-white/50'>
-                      {testimonial.location}
-                    </p>
-                    <p className='f-body text-xs font-medium text-[#C6F135]'>
-                      {testimonial.exam}
-                    </p>
-                  </div>
-                </div>
+          <div className='overflow-hidden'>
+  <motion.div
+    className='flex w-max'
+    animate={{ x: ['0%', '-50%'] }}
+    transition={{
+      duration: 80,
+      repeat: Infinity,
+      ease: 'linear',
+    }}
+  >
+    {[...testimonials, ...testimonials].map((testimonial, index) => (
+      <div
+        key={index}
+        className='mr-6 w-[320px] flex-shrink-0 rounded-xl border border-white/10 bg-[#111] p-6 transition-colors hover:border-white/25'
+      >
+        <div className='mb-4 flex items-center gap-4'>
+          <div className='shrink-0 text-5xl'>{testimonial.image}</div>
+          <div className='min-w-0 flex-1'>
+            <h4 className='f-body text-base font-semibold text-white'>
+              {testimonial.name}
+            </h4>
+            <p className='f-body text-xs text-white/50'>
+              {testimonial.location}
+            </p>
+            <p className='f-body text-xs font-medium text-[#C6F135]'>
+              {testimonial.exam}
+            </p>
+          </div>
+        </div>
 
-                <div className='mb-3 flex gap-1'>
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className='h-4 w-4 fill-[#F5E6A8] text-[#F5E6A8]' />
-                  ))}
-                </div>
+        <div className='mb-3 flex gap-1'>
+          {[...Array(testimonial.rating)].map((_, i) => (
+            <Star key={i} className='h-4 w-4 fill-[#F5E6A8] text-[#F5E6A8]' />
+          ))}
+        </div>
 
-                <p className='f-body text-sm italic text-white/60'>
-                  "{testimonial.quote}"
-                </p>
-              </div>
-            ))}
-          </motion.div>
+        <p className='f-body text-sm italic text-white/60'>
+          "{testimonial.quote}"
+        </p>
+      </div>
+    ))}
+  </motion.div>
+</div>
         </div>
       </div>
     </section>
