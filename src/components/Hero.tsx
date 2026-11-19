@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
-    <section className='relative min-h-screen overflow-hidden bg-[#0A0A0A] text-white'>
+    <section className='relative flex min-h-screen flex-col overflow-hidden bg-[#0A0A0A] text-white'>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600&display=swap');
         .f-display { font-family: 'Archivo Black', sans-serif; }
@@ -24,17 +24,20 @@ const Hero = () => {
       <div aria-hidden className='pointer-events-none absolute -right-40 bottom-0 h-[28rem] w-[28rem] rounded-full bg-[#8B7FE8]/[0.08] blur-3xl' />
 
       <nav className='relative z-10 flex items-center justify-between px-8 py-6 lg:px-16'>
-        <div className='f-display text-xl tracking-tight'>
-          MED<span className='text-[#C6F135]'>QUEL</span>
+        <div className='flex items-center gap-3'>
+          <img src='/favicon/favicon-96x96.png' alt='Medquel logo' className='h-8 w-8 object-contain' />
+          <div className='f-display text-xl tracking-tight'>
+            MED<span className='text-[#C6F135]'>QUEL</span>
+          </div>
         </div>
       </nav>
 
-      <div className='relative z-10 mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-8 pb-20 pt-8 lg:min-h-[calc(80vh-5rem)] lg:grid-cols-[0.85fr_1.15fr] lg:px-16 lg:py-0'>
+      <div className='relative z-10 mx-auto grid w-full max-w-6xl flex-1 grid-cols-1 items-center gap-12 px-8 py-8 lg:grid-cols-[0.85fr_1.15fr] lg:px-16 lg:py-12'>
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className='relative mx-auto w-[260px] select-none'
+          className='relative mx-auto w-[260px] select-none lg:mb-10'
         >
           <div className='absolute -left-28 top-8 hidden rounded-xl border border-white/10 bg-[#151515]/90 px-4 py-3 shadow-2xl backdrop-blur-md lg:block'>
             <div className='flex items-center gap-2 text-[10px] font-semibold uppercase tracking-wider text-white/50'>
@@ -117,7 +120,7 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      <div className='pointer-events-none absolute bottom-20 left-1/2 z-10 hidden w-[min(calc(100%-4rem),72rem)] -translate-x-1/2 border-y border-white/10 py-4 lg:block'>
+      <div className='pointer-events-none relative z-10 mx-auto hidden w-[min(calc(100%-4rem),72rem)] border-y border-white/10 py-4 lg:block'>
         <div className='grid grid-cols-3 divide-x divide-white/10 text-center'>
           <div>
             <div className='f-display text-lg text-[#C6F135]'>01</div>
@@ -136,7 +139,7 @@ const Hero = () => {
 
       <a
         href='#about'
-        className='absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.3em] text-white/40 transition-colors hover:text-[#C6F135] sm:flex'
+        className='relative z-10 mx-auto mb-6 mt-6 hidden flex-col items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.3em] text-white/40 transition-colors hover:text-[#C6F135] sm:flex'
       >
         <span>Scroll to explore</span>
         <span className='h-10 w-px bg-gradient-to-b from-[#C6F135] to-transparent' />
