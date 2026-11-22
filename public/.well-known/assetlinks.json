@@ -1,11 +1,19 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
 
     "target": {
       "namespace": "android_app",
       "package_name": "com.medquel.app",
-      "sha256_cert_fingerprints": ["D3:D3:34:A3:55:76:AD:36:DD:A9:85:F4:C3:87:6E:BA:27:A3:63:1B:AF:6F:B9:A5:8A:36:61:85:65:A8:72:63"]
+      "sha256_cert_fingerprints": [
+        "D3:D3:34:A3:55:76:AD:36:DD:A9:85:F4:C3:87:6E:BA:27:A3:63:1B:AF:6F:B9:A5:8A:36:61:85:65:A8:72:63",
+        "CD:1A:FB:38:94:3C:A0:15:39:13:EA:64:23:87:35:38:0F:39:C6:57:56:99:5B:23:4F:5D:DE:92:46:EC:D9:6E",
+        "C1:B9:7B:94:97:3F:0B:3A:55:D3:50:CE:44:53:2C:B4:AD:E1:28:05:33:38:21:8C:97:4C:8C:4E:CB:17:DE:A3",
+        "77:60:6A:73:34:48:AF:0F:4E:B1:E6:C2:F2:A2:86:12:32:22:9E:82:EC:7B:66:B7:D5:4E:88:A6:DB:74:2F:3C"
+      ]
     }
   }
 ]
