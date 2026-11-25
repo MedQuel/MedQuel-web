@@ -16,12 +16,19 @@ const sections: LegalSection[] = [
     ],
   },
   {
+    heading: 'Where you bought matters',
+    bullets: [
+      'Bought in the Android app: the payment is taken and refunded by Google Play.',
+      'Bought on our website: the payment is taken and refunded by Razorpay.',
+    ],
+  },
+  {
     heading: 'When we refund',
     bullets: [
       'Your payment was successful but premium was not activated within 24 hours and we cannot fix it. You will receive a full refund.',
-      'You were charged more than once for the same order. The extra amount is refunded in full.',
+      'You were charged more than once for the same plan. The extra amount is refunded in full.',
       'You were charged the wrong amount because of an error on our side. The difference is refunded.',
-      'You contact us within 48 hours of purchase and have not used premium features. We will review it and may refund the plan.',
+      'Other requests are reviewed case by case, and we may refund where the law requires it.',
     ],
   },
   {
@@ -29,20 +36,27 @@ const sections: LegalSection[] = [
     bullets: [
       'After premium has been activated and used, except as described above or where required by law.',
       'Accounts closed for breaching our Terms (for example cheating or payment abuse).',
-      'Change of mind after the first 48 hours, or not using the plan.',
+      'Change of mind or not using the plan.',
     ],
   },
   {
-    heading: 'Failed or pending payments',
+    heading: 'Premium bought in the app (Google Play)',
     paragraphs: [
-      'If money was debited but the payment failed, your bank or UPI app returns it automatically, usually within 5 to 7 business days. If it has not arrived after that, contact your bank with the Razorpay payment id shown in your payment receipt, or write to us and we will help trace it.',
+      'If you were charged but premium is not active, open the Premium screen and tap Restore purchases first. If it still does not appear, contact us with your Google Play order number (it starts with "GPA.").',
+      'Google Play also lets you request a refund from your order history on Google Play, subject to Google Play\'s own policy. Approved refunds go back to your original Google Play payment method, and the premium time bought with that order is removed from your account automatically.',
+    ],
+  },
+  {
+    heading: 'Premium bought on our website (Razorpay)',
+    paragraphs: [
+      'If money was debited but the payment failed, your bank or UPI app returns it automatically, usually within 5 to 7 business days. If it has not arrived after that, contact your bank with the Razorpay payment id from your receipt, or write to us and we will help trace it.',
+      'Approved refunds are issued to the original payment method through Razorpay and typically reach you within 5 to 7 business days. When a refund is issued, the premium time bought with that payment is removed from your account.',
     ],
   },
   {
     heading: 'How to request a refund',
     paragraphs: [
-      `Email ${SITE.supportEmail} from your registered email address with your order id (it starts with "order_") and a short reason. We reply within 2 business days. Approved refunds are issued to the original payment method through Razorpay and typically reach you within 5 to 7 business days.`,
-      'When a refund is issued, the premium time bought with that payment is removed from your account.',
+      `Email ${SITE.supportEmail} from your registered email address with your order number (a Google Play order number starting with "GPA." or a website order id starting with "order_") and a short reason. We reply within 2 business days.`,
     ],
   },
   {
