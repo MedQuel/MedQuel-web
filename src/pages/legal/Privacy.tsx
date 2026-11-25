@@ -16,7 +16,7 @@ const sections: LegalSection[] = [
       'Profile data you give us: role (for example MBBS student or postgraduate), year, specialties, target exam, institution.',
       'Learning activity: quiz and contest answers, scores, XP and EP, streaks, badges, study-plan progress, time spent.',
       'Social features: friends, friend requests and challenges you send or receive.',
-      'Payment records: plan, amount, order and payment ids, status and dates. Card, UPI and bank details are handled by Razorpay and never reach our servers.',
+      'Payment records: plan, amount, order ids, status and dates. For in-app purchases Google Play processes the payment and we receive an order id and a purchase token; for website purchases Razorpay processes the payment. Card, UPI and bank details never reach our servers.',
       'Device data: push-notification tokens, app version and basic technical logs needed to run and secure the Service.',
     ],
   },
@@ -38,6 +38,7 @@ const sections: LegalSection[] = [
     bullets: [
       'Google (Firebase Authentication, Firestore, Cloud Run, BigQuery, Cloud Messaging) for hosting, sign-in, storage and notifications.',
       'Google Gemini API, which receives your exam, profile and subject-performance summary to generate study plans.',
+      'Google Play, which processes in-app purchases and has its own privacy policy.',
       'Razorpay, which processes payments and has its own privacy policy.',
       'Other users, only the limited public profile data needed for leaderboards, friends and challenges (display name, photo, level, streak, EP).',
       'Authorities, where required by law.',
@@ -46,7 +47,7 @@ const sections: LegalSection[] = [
   {
     heading: 'How long we keep it',
     paragraphs: [
-      'We keep your data while your account is active. If you ask us to delete your account we remove your personal data, except records we must keep by law (for example payment and tax records) and anonymised statistics.',
+      'We keep your data while your account is active. You can delete your account from the app (Settings, Delete account) or at https://www.medquel.com/delete-account. Deleting your account removes your personal data immediately, except records we must keep by law (for example payment and tax records) and anonymised statistics. Accounts that sign up but never verify their email are deleted automatically after 7 days.',
     ],
   },
   {
@@ -64,7 +65,7 @@ const sections: LegalSection[] = [
   {
     heading: 'Children',
     paragraphs: [
-      `${SITE.brand} is intended for medical students and professionals aged 18 and over. If you are under 18, please use the Service only with a parent or guardian's consent. If you believe a child has given us data without consent, contact us and we will delete it.`,
+      `${SITE.brand} is intended for people aged 18 and over. We do not knowingly collect data from anyone under 18. If you believe a child has given us data, contact us and we will delete it.`,
     ],
   },
   {
