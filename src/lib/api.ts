@@ -149,6 +149,10 @@ export async function fetchMe(): Promise<Me> {
   return data.me;
 }
 
+export async function deleteMyAccount(): Promise<void> {
+  await gql<{ deleteMyAccount: boolean }>(`mutation { deleteMyAccount }`);
+}
+
 export async function fetchPremiumStatus(): Promise<PremiumStatus> {
   const data = await gql<{ getPremiumStatus: PremiumStatus }>(
     `query {
