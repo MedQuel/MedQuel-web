@@ -12,7 +12,7 @@ const sections: LegalSection[] = [
   {
     heading: 'Eligibility and accounts',
     bullets: [
-      'You must be 18 or older, or use the Service under the supervision of a parent or legal guardian who agrees to these Terms.',
+      'You must be 18 or older to use the Service.',
       'You are responsible for the accuracy of your profile and for keeping your sign-in credentials safe.',
       'One person, one account. Sharing or selling accounts is not allowed.',
     ],
@@ -27,8 +27,8 @@ const sections: LegalSection[] = [
     heading: 'Premium plans and payments',
     bullets: [
       'Premium is sold as a prepaid plan for a fixed duration (for example 1 month, 3 months or 1 year). Plans do not renew automatically.',
-      'Prices are shown in Indian Rupees (INR) at checkout and include applicable taxes unless stated otherwise.',
-      'Payments are processed by Razorpay. We do not receive or store your card, UPI or bank credentials.',
+      'Purchases made in the Android app are billed and processed by Google Play and are also subject to Google Play\'s terms. Purchases made on our website are processed by Razorpay.',
+      'Prices are shown in Indian Rupees (INR). The price shown at checkout is the price you pay. We do not receive or store your card, UPI or bank credentials.',
       'Premium is activated on your account once the payment is confirmed, usually within seconds. If you buy another plan while premium is active, the new period starts after your current one ends.',
       'Refunds are governed by our Refund and Cancellation Policy.',
     ],
@@ -53,7 +53,7 @@ const sections: LegalSection[] = [
   {
     heading: 'Suspension and termination',
     paragraphs: [
-      'We may suspend or terminate accounts that breach these Terms, with premium access ending without refund where the breach is serious (for example cheating or payment abuse). You can stop using the Service at any time, and you can ask us to delete your account by writing to the support address below.',
+      'We may suspend or terminate accounts that breach these Terms, with premium access ending without refund where the breach is serious (for example cheating or payment abuse). You can stop using the Service at any time. You can delete your account from the app (Settings, Delete account) or at https://www.medquel.com/delete-account.',
     ],
   },
   {
