@@ -32,6 +32,7 @@ const legalLinks = [
   { label: 'Privacy Policy', to: '/privacy' },
   { label: 'Terms of Service', to: '/terms' },
   { label: 'Refund & Cancellation Policy', to: '/refund-policy' },
+  { label: 'Delete Account', to: '/delete-account' },
   { label: 'Contact Us', to: '/contact' },
 ];
 
