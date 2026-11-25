@@ -10,6 +10,7 @@ const PaymentSuccess = lazy(() => import('./pages/PaymentSuccess'));
 const Terms = lazy(() => import('./pages/legal/Terms'));
 const Privacy = lazy(() => import('./pages/legal/Privacy'));
 const RefundPolicy = lazy(() => import('./pages/legal/RefundPolicy'));
+const DeleteAccount = lazy(() => import('./pages/DeleteAccount'));
 const Contact = lazy(() => import('./pages/legal/Contact'));
 const AppFallback = lazy(() => import('./pages/AppFallback'));
 const NotFound = lazy(() => import('./pages/NotFound'));
@@ -52,6 +53,7 @@ export default function App() {
             <Route path='/terms' element={<Terms />} />
             <Route path='/privacy' element={<Privacy />} />
             <Route path='/refund-policy' element={<RefundPolicy />} />
+            <Route path='/delete-account' element={<DeleteAccount />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/app/*' element={<AppFallback />} />
             <Route path='*' element={<NotFound />} />
